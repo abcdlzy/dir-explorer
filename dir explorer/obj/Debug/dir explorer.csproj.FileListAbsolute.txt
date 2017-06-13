@@ -1,0 +1,8 @@
+C:\Users\123\Source\Repos\dir-explorer\dir explorer\bin\Debug\dir explorer.exe
+C:\Users\123\Source\Repos\dir-explorer\dir explorer\bin\Debug\dir explorer.pdb
+C:\Users\123\Source\Repos\dir-explorer\dir explorer\obj\Debug\dir explorer.csprojResolveAssemblyReference.cache
+C:\Users\123\Source\Repos\dir-explorer\dir explorer\obj\Debug\dir_explorer.Form1.resources
+C:\Users\123\Source\Repos\dir-explorer\dir explorer\obj\Debug\dir_explorer.Properties.Resources.resources
+C:\Users\123\Source\Repos\dir-explorer\dir explorer\obj\Debug\dir explorer.csproj.GenerateResource.Cache
+C:\Users\123\Source\Repos\dir-explorer\dir explorer\obj\Debug\dir explorer.exe
+C:\Users\123\Source\Repos\dir-explorer\dir explorer\obj\Debug\dir explorer.pdb
