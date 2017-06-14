@@ -26,6 +26,7 @@ namespace dir_explorer
             {
                 string file = ofdSource.FileName;
                 tbReadFile.Text = file;
+                lfr = new List<FolderResult>();
                 try
                 {
                     if (cbEncoding.SelectedItem.ToString() == "Default")
@@ -207,10 +208,22 @@ namespace dir_explorer
                 }
                 tbPath.Text = tbPath.Text.Replace("\\\\", "\\");
                 bindData(tbPath.Text);
-
+            }
+            //剪贴板
+            else
+            {
+                tbclip.Text = tbPath.Text + "\\" + gvRs.Rows[e.RowIndex].Cells[2].Value.ToString();
+                tbclip.Text = tbclip.Text.Replace("\\\\", "\\");
+                try
+                {
+                    Clipboard.SetText(tbclip.Text);
+                    lbClipTips.Text = "";
+                }
+                catch(Exception ex)
+                {
+                    lbClipTips.Text = ex.Message;
+                }
                 
-
-
             }
         }
 

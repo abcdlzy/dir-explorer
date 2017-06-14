@@ -5,3 +5,4 @@ C:\Users\123\Source\Repos\dir-explorer\dir explorer\obj\Release\dir_explorer.Pro
 C:\Users\123\Source\Repos\dir-explorer\dir explorer\obj\Release\dir explorer.csproj.GenerateResource.Cache
 C:\Users\123\Source\Repos\dir-explorer\dir explorer\obj\Release\dir explorer.exe
 C:\Users\123\Source\Repos\dir-explorer\dir explorer\obj\Release\dir explorer.pdb
+C:\Users\123\Source\Repos\dir-explorer\dir explorer\obj\Release\dir explorer.csprojResolveAssemblyReference.cache

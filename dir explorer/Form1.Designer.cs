@@ -38,6 +38,9 @@
             this.tvTree = new System.Windows.Forms.TreeView();
             this.gvRs = new System.Windows.Forms.DataGridView();
             this.cbEncoding = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbclip = new System.Windows.Forms.TextBox();
+            this.lbClipTips = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvRs)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +68,7 @@
             // 
             this.tbPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbPath.Location = new System.Drawing.Point(316, 47);
+            this.tbPath.Location = new System.Drawing.Point(316, 33);
             this.tbPath.Name = "tbPath";
             this.tbPath.Size = new System.Drawing.Size(690, 21);
             this.tbPath.TabIndex = 2;
@@ -73,7 +76,7 @@
             // btnGo
             // 
             this.btnGo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGo.Location = new System.Drawing.Point(1028, 47);
+            this.btnGo.Location = new System.Drawing.Point(1028, 33);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(75, 23);
             this.btnGo.TabIndex = 3;
@@ -84,7 +87,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(256, 52);
+            this.label1.Location = new System.Drawing.Point(256, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 4;
@@ -117,11 +120,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gvRs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvRs.Location = new System.Drawing.Point(241, 94);
+            this.gvRs.Location = new System.Drawing.Point(241, 88);
             this.gvRs.Name = "gvRs";
             this.gvRs.ReadOnly = true;
             this.gvRs.RowTemplate.Height = 23;
-            this.gvRs.Size = new System.Drawing.Size(862, 422);
+            this.gvRs.Size = new System.Drawing.Size(862, 428);
             this.gvRs.TabIndex = 7;
             this.gvRs.DataSourceChanged += new System.EventHandler(this.gvRs_DataSourceChanged);
             this.gvRs.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvRs_CellDoubleClick);
@@ -143,11 +146,39 @@
             this.cbEncoding.Size = new System.Drawing.Size(71, 20);
             this.cbEncoding.TabIndex = 8;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(268, 64);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 12);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "剪贴板";
+            // 
+            // tbclip
+            // 
+            this.tbclip.Location = new System.Drawing.Point(316, 61);
+            this.tbclip.Name = "tbclip";
+            this.tbclip.Size = new System.Drawing.Size(690, 21);
+            this.tbclip.TabIndex = 10;
+            // 
+            // lbClipTips
+            // 
+            this.lbClipTips.AutoSize = true;
+            this.lbClipTips.ForeColor = System.Drawing.Color.Red;
+            this.lbClipTips.Location = new System.Drawing.Point(1026, 64);
+            this.lbClipTips.Name = "lbClipTips";
+            this.lbClipTips.Size = new System.Drawing.Size(0, 12);
+            this.lbClipTips.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1118, 528);
+            this.Controls.Add(this.lbClipTips);
+            this.Controls.Add(this.tbclip);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.cbEncoding);
             this.Controls.Add(this.gvRs);
             this.Controls.Add(this.tvTree);
@@ -177,6 +208,9 @@
         private System.Windows.Forms.TreeView tvTree;
         private System.Windows.Forms.DataGridView gvRs;
         private System.Windows.Forms.ComboBox cbEncoding;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbclip;
+        private System.Windows.Forms.Label lbClipTips;
     }
 }
 
