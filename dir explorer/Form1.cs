@@ -16,6 +16,7 @@ namespace dir_explorer
         public Form1()
         {
             InitializeComponent();
+            cbEncoding.SelectedIndex=0;
         }
 
         private void btnRead_Click(object sender, EventArgs e)
@@ -27,7 +28,34 @@ namespace dir_explorer
                 tbReadFile.Text = file;
                 try
                 {
-                    nowFileText = File.ReadAllText(file,Encoding.Default);
+                    if (cbEncoding.SelectedItem.ToString() == "Default")
+                    {
+                        nowFileText = File.ReadAllText(file, Encoding.Default);
+                    }
+                    else if (cbEncoding.SelectedItem.ToString() == "UTF8")
+                    {
+                        nowFileText = File.ReadAllText(file, Encoding.UTF8);
+                    }
+                    else if (cbEncoding.SelectedItem.ToString() == "Unicode")
+                    {
+                        nowFileText = File.ReadAllText(file, Encoding.Unicode);
+                    }
+                    else if (cbEncoding.SelectedItem.ToString() == "ASCII")
+                    {
+                        nowFileText = File.ReadAllText(file, Encoding.ASCII);
+                    }
+                    else if (cbEncoding.SelectedItem.ToString() == "BigEndianUnicode")
+                    {
+                        nowFileText = File.ReadAllText(file, Encoding.BigEndianUnicode);
+                    }
+                    else if (cbEncoding.SelectedItem.ToString() == "UTF7")
+                    {
+                        nowFileText = File.ReadAllText(file, Encoding.UTF7);
+                    }
+                    else if (cbEncoding.SelectedItem.ToString() == "UTF32")
+                    {
+                        nowFileText = File.ReadAllText(file, Encoding.UTF32);
+                    }
                     format();
                     bindTree();
                 }
@@ -190,6 +218,7 @@ namespace dir_explorer
         {
             if (lfr.Count > 0)
             {
+                tvTree.Nodes.Clear();
                 tvTree.Nodes.Add(buildTree(lfr[0].path, lfr[0].path));
             }
         }

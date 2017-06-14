@@ -37,11 +37,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tvTree = new System.Windows.Forms.TreeView();
             this.gvRs = new System.Windows.Forms.DataGridView();
+            this.cbEncoding = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvRs)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRead
             // 
+            this.btnRead.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRead.Location = new System.Drawing.Point(1028, 6);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(75, 23);
@@ -52,13 +54,17 @@
             // 
             // tbReadFile
             // 
+            this.tbReadFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbReadFile.Location = new System.Drawing.Point(316, 6);
             this.tbReadFile.Name = "tbReadFile";
-            this.tbReadFile.Size = new System.Drawing.Size(690, 21);
+            this.tbReadFile.Size = new System.Drawing.Size(615, 21);
             this.tbReadFile.TabIndex = 1;
             // 
             // tbPath
             // 
+            this.tbPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbPath.Location = new System.Drawing.Point(316, 47);
             this.tbPath.Name = "tbPath";
             this.tbPath.Size = new System.Drawing.Size(690, 21);
@@ -66,6 +72,7 @@
             // 
             // btnGo
             // 
+            this.btnGo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGo.Location = new System.Drawing.Point(1028, 47);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(75, 23);
@@ -94,6 +101,8 @@
             // 
             // tvTree
             // 
+            this.tvTree.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.tvTree.Location = new System.Drawing.Point(13, 11);
             this.tvTree.Name = "tvTree";
             this.tvTree.Size = new System.Drawing.Size(208, 505);
@@ -104,6 +113,9 @@
             // 
             this.gvRs.AllowUserToAddRows = false;
             this.gvRs.AllowUserToDeleteRows = false;
+            this.gvRs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gvRs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvRs.Location = new System.Drawing.Point(241, 94);
             this.gvRs.Name = "gvRs";
@@ -114,11 +126,29 @@
             this.gvRs.DataSourceChanged += new System.EventHandler(this.gvRs_DataSourceChanged);
             this.gvRs.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvRs_CellDoubleClick);
             // 
+            // cbEncoding
+            // 
+            this.cbEncoding.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbEncoding.FormattingEnabled = true;
+            this.cbEncoding.Items.AddRange(new object[] {
+            "UTF8",
+            "Default",
+            "Unicode",
+            "ASCII",
+            "UTF7",
+            "UTF32",
+            "BigEndianUnicode"});
+            this.cbEncoding.Location = new System.Drawing.Point(937, 6);
+            this.cbEncoding.Name = "cbEncoding";
+            this.cbEncoding.Size = new System.Drawing.Size(71, 20);
+            this.cbEncoding.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1118, 528);
+            this.Controls.Add(this.cbEncoding);
             this.Controls.Add(this.gvRs);
             this.Controls.Add(this.tvTree);
             this.Controls.Add(this.label2);
@@ -146,6 +176,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TreeView tvTree;
         private System.Windows.Forms.DataGridView gvRs;
+        private System.Windows.Forms.ComboBox cbEncoding;
     }
 }
 
