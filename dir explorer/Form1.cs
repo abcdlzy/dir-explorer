@@ -336,5 +336,48 @@ namespace dir_explorer
             tbPath.Text = e.Node.FullPath.Replace("\\\\", "\\");
             bindData(tbPath.Text);
         }
+
+        private void btnsearch_Click(object sender, EventArgs e)
+        {
+            bindSearch(tbsearch.Text);
+        }
+
+        private void bindSearch(string key)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("时间", typeof(String));
+            dt.Columns.Add("信息", typeof(String));
+            dt.Columns.Add("名称", typeof(String));
+            dt.Columns.Add("路径", typeof(String));
+
+
+            foreach(var folderRes in lfr)
+            {
+                foreach (var itemObj in folderRes.listObj)
+                {
+                    if (itemObj.getName().IndexOf(key) != -1)
+                    {
+                        DataRow dr = dt.NewRow();
+                        dr["时间"] = itemObj.getTime();
+                        dr["信息"] = itemObj.getInfo();
+                        dr["名称"] = itemObj.getName();
+                        dr["路径"] =( folderRes.path+"\\"+itemObj.getName()).Replace("\\\\","\\");
+                        
+                        dt.Rows.Add(dr);
+                    }
+                }
+            }
+
+            gvSearch.DataSource = dt;
+
+        }
+
+        private void gvSearch_DataSourceChanged(object sender, EventArgs e)
+        {
+            gvSearch.Columns[0].Width = 150;
+            gvSearch.Columns[1].Width = 150;
+            gvSearch.Columns[2].Width = 300;
+            gvSearch.Columns[3].Width = 500;
+        }
     }
 }
