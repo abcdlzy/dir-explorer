@@ -210,6 +210,25 @@ namespace dir_explorer
                 tbPath.Text = tbPath.Text.Replace("\\\\", "\\");
                 bindData(tbPath.Text);
             }
+            else if (gvRs.Rows[e.RowIndex].Cells[1].Value.ToString() == "<SYMLINKD>" || gvRs.Rows[e.RowIndex].Cells[1].Value.ToString() == "<JUNCTION>")
+            {
+                string linkpath = gvRs.Rows[e.RowIndex].Cells[2].Value.ToString();
+                int start = linkpath.IndexOf('[');
+                int end = linkpath.IndexOf(']');
+
+                
+                string subpath = linkpath.Substring(start + 1, end - start - 1);
+
+                //解决盘符大小写问题
+                char[] cpath = subpath.ToCharArray();
+                cpath[0]= tbPath.Text[0];
+                tbPath.Text = new string(cpath);
+
+
+
+                tbPath.Text = tbPath.Text.Replace("\\\\", "\\");
+                bindData(tbPath.Text);
+            }
             //剪贴板
             else
             {
