@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace dir_explorer
@@ -242,10 +243,15 @@ namespace dir_explorer
             if (childDir.Count > 0)
             {
                 TreeNode tn = new TreeNode(showName);
-                foreach(var cd in childDir)
+
+                Parallel.ForEach(childDir, cd =>
                 {
-                    tn.Nodes.Add(buildTree((path + "\\" + cd).Replace("\\\\", "\\"), cd));
-                }
+                    TreeNode getTree =buildTree((path + "\\" + cd).Replace("\\\\", "\\"), cd);
+                    lock (this)
+                    {
+                        tn.Nodes.Add(getTree);
+                    }
+                });
                 return tn;
             }
             else

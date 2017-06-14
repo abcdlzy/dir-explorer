@@ -6,3 +6,4 @@ C:\Users\123\Source\Repos\dir-explorer\dir explorer\obj\Release\dir explorer.csp
 C:\Users\123\Source\Repos\dir-explorer\dir explorer\obj\Release\dir explorer.exe
 C:\Users\123\Source\Repos\dir-explorer\dir explorer\obj\Release\dir explorer.pdb
 C:\Users\123\Source\Repos\dir-explorer\dir explorer\obj\Release\dir explorer.csprojResolveAssemblyReference.cache
+C:\Users\123\Source\Repos\dir-explorer\dir explorer\bin\Release\dir explorer.exe.config
