@@ -48,6 +48,7 @@
             this.tbsearch = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.gvSearch = new System.Windows.Forms.DataGridView();
+            this.cbcase = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvRs)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -223,6 +224,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.cbcase);
             this.tabPage2.Controls.Add(this.btnsearch);
             this.tabPage2.Controls.Add(this.tbsearch);
             this.tabPage2.Controls.Add(this.label4);
@@ -238,7 +240,7 @@
             // btnsearch
             // 
             this.btnsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnsearch.Location = new System.Drawing.Point(1020, 11);
+            this.btnsearch.Location = new System.Drawing.Point(1026, 9);
             this.btnsearch.Name = "btnsearch";
             this.btnsearch.Size = new System.Drawing.Size(75, 23);
             this.btnsearch.TabIndex = 3;
@@ -252,7 +254,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbsearch.Location = new System.Drawing.Point(77, 11);
             this.tbsearch.Name = "tbsearch";
-            this.tbsearch.Size = new System.Drawing.Size(917, 21);
+            this.tbsearch.Size = new System.Drawing.Size(853, 21);
             this.tbsearch.TabIndex = 2;
             // 
             // label4
@@ -272,13 +274,26 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gvSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvSearch.Location = new System.Drawing.Point(7, 55);
+            this.gvSearch.Location = new System.Drawing.Point(7, 46);
             this.gvSearch.Name = "gvSearch";
             this.gvSearch.ReadOnly = true;
             this.gvSearch.RowTemplate.Height = 23;
-            this.gvSearch.Size = new System.Drawing.Size(1109, 468);
+            this.gvSearch.Size = new System.Drawing.Size(1109, 477);
             this.gvSearch.TabIndex = 0;
             this.gvSearch.DataSourceChanged += new System.EventHandler(this.gvSearch_DataSourceChanged);
+            // 
+            // cbcase
+            // 
+            this.cbcase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbcase.AutoSize = true;
+            this.cbcase.Checked = true;
+            this.cbcase.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbcase.Location = new System.Drawing.Point(936, 13);
+            this.cbcase.Name = "cbcase";
+            this.cbcase.Size = new System.Drawing.Size(84, 16);
+            this.cbcase.TabIndex = 4;
+            this.cbcase.Text = "忽略大小写";
+            this.cbcase.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -321,6 +336,7 @@
         private System.Windows.Forms.TextBox tbsearch;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView gvSearch;
+        private System.Windows.Forms.CheckBox cbcase;
     }
 }
 

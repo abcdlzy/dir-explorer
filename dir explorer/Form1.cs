@@ -350,23 +350,49 @@ namespace dir_explorer
             dt.Columns.Add("名称", typeof(String));
             dt.Columns.Add("路径", typeof(String));
 
+            List<string> listKey = new List<string>();
+            if (key.IndexOf('|') != -1)
+            {
+                string[] keys = key.Split('|');
+                foreach (var k in keys)
+                {
+                    if (cbcase.Checked)
+                    {
+                        listKey.Add(k.ToLower());
+                    }
+                    else
+                    {
+                        listKey.Add(k);
+                    }
 
-            foreach(var folderRes in lfr)
+                }
+            }
+            else
+            {
+                if (cbcase.Checked)
+                {
+                    listKey.Add(key.ToLower());
+                }
+                else
+                {
+                    listKey.Add(key);
+                }
+            }
+
+            foreach (var folderRes in lfr)
             {
                 foreach (var itemObj in folderRes.listObj)
                 {
-                    List<string> listKey = new List<string>();
-                    if (key.IndexOf('|') != -1)
-                    {
-                        string[] keys = key.Split('|');
-                        foreach(var k in keys)
-                        {
-                            listKey.Add(k);
-                        }
-                    }
+                    
                     foreach(var lk in listKey)
                     {
-                        if (itemObj.getName().IndexOf(lk) != -1)
+                        string filename = itemObj.getName();
+                        if (cbcase.Checked)
+                        {
+                            filename=filename.ToLower();
+                            
+                        }
+                        if (filename.IndexOf(lk) != -1)
                         {
                             DataRow dr = dt.NewRow();
                             dr["时间"] = itemObj.getTime();
