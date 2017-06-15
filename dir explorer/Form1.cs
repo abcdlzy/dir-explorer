@@ -404,6 +404,10 @@ namespace dir_explorer
                                     {
                                         break;
                                     }
+                                    if (i == 0 && subfilnename.IndexOf(lkArray[i]) != 0)
+                                    {
+                                        break;
+                                    }
                                     int startPos = subfilnename.IndexOf(lkArray[i]) + lkArray[i].Length;
                                     int cutLength = subfilnename.Length - startPos;
                                     if (subfilnename.Length < startPos)
