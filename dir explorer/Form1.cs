@@ -420,5 +420,19 @@ namespace dir_explorer
             gvSearch.Columns[2].Width = 300;
             gvSearch.Columns[3].Width = 500;
         }
+
+        private void gvSearch_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tbSearchClip.Text =  gvSearch.Rows[e.RowIndex].Cells[3].Value.ToString();
+            try
+            {
+                Clipboard.SetText(tbSearchClip.Text);
+                lbSearchTips.Text = DateTime.Now+ ":已复制到剪贴板.";
+            }
+            catch (Exception ex)
+            {
+                lbSearchTips.Text = ex.Message;
+            }
+        }
     }
 }

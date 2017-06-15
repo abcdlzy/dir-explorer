@@ -49,6 +49,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.gvSearch = new System.Windows.Forms.DataGridView();
             this.cbcase = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbSearchClip = new System.Windows.Forms.TextBox();
+            this.lbSearchTips = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvRs)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -224,6 +227,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.lbSearchTips);
+            this.tabPage2.Controls.Add(this.tbSearchClip);
+            this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.cbcase);
             this.tabPage2.Controls.Add(this.btnsearch);
             this.tabPage2.Controls.Add(this.tbsearch);
@@ -254,7 +260,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbsearch.Location = new System.Drawing.Point(77, 11);
             this.tbsearch.Name = "tbsearch";
-            this.tbsearch.Size = new System.Drawing.Size(853, 21);
+            this.tbsearch.Size = new System.Drawing.Size(837, 21);
             this.tbsearch.TabIndex = 2;
             // 
             // label4
@@ -274,13 +280,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gvSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvSearch.Location = new System.Drawing.Point(7, 46);
+            this.gvSearch.Location = new System.Drawing.Point(7, 63);
             this.gvSearch.Name = "gvSearch";
             this.gvSearch.ReadOnly = true;
             this.gvSearch.RowTemplate.Height = 23;
-            this.gvSearch.Size = new System.Drawing.Size(1109, 477);
+            this.gvSearch.Size = new System.Drawing.Size(1109, 460);
             this.gvSearch.TabIndex = 0;
             this.gvSearch.DataSourceChanged += new System.EventHandler(this.gvSearch_DataSourceChanged);
+            this.gvSearch.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvSearch_CellDoubleClick);
             // 
             // cbcase
             // 
@@ -294,6 +301,34 @@
             this.cbcase.TabIndex = 4;
             this.cbcase.Text = "忽略大小写";
             this.cbcase.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(18, 41);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 12);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "当前选择";
+            // 
+            // tbSearchClip
+            // 
+            this.tbSearchClip.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSearchClip.Location = new System.Drawing.Point(77, 38);
+            this.tbSearchClip.Name = "tbSearchClip";
+            this.tbSearchClip.Size = new System.Drawing.Size(837, 21);
+            this.tbSearchClip.TabIndex = 6;
+            // 
+            // lbSearchTips
+            // 
+            this.lbSearchTips.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbSearchTips.AutoSize = true;
+            this.lbSearchTips.ForeColor = System.Drawing.Color.Red;
+            this.lbSearchTips.Location = new System.Drawing.Point(920, 41);
+            this.lbSearchTips.Name = "lbSearchTips";
+            this.lbSearchTips.Size = new System.Drawing.Size(0, 12);
+            this.lbSearchTips.TabIndex = 7;
             // 
             // Form1
             // 
@@ -337,6 +372,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView gvSearch;
         private System.Windows.Forms.CheckBox cbcase;
+        private System.Windows.Forms.Label lbSearchTips;
+        private System.Windows.Forms.TextBox tbSearchClip;
+        private System.Windows.Forms.Label label5;
     }
 }
 
