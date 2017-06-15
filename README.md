@@ -10,8 +10,9 @@ support command : dir /a /s<br>
 
 编译好的程序 dir explorer(.net 2.0).exe，直接下载就能用了，需要.net 2.0。<br>
 
-dir explorer.exe为多线程版本需要.net 4.0。<br>
+dir explorer.exe为多线程版本，需要.net 4.0。<br>
 <br>
+搜索功能可以使用 * 来进行模糊搜索，使用 | 来同时搜索多个匹配条件。<br>
 
 
 # 运行效果

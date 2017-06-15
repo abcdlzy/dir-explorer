@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnRead = new System.Windows.Forms.Button();
             this.ofdSource = new System.Windows.Forms.OpenFileDialog();
             this.tbReadFile = new System.Windows.Forms.TextBox();
@@ -52,6 +53,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tbSearchClip = new System.Windows.Forms.TextBox();
             this.lbSearchTips = new System.Windows.Forms.Label();
+            this.toolTipSearch = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gvRs)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -262,6 +264,7 @@
             this.tbsearch.Name = "tbsearch";
             this.tbsearch.Size = new System.Drawing.Size(837, 21);
             this.tbsearch.TabIndex = 2;
+            this.tbsearch.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbsearch_MouseMove);
             // 
             // label4
             // 
@@ -375,6 +378,7 @@
         private System.Windows.Forms.Label lbSearchTips;
         private System.Windows.Forms.TextBox tbSearchClip;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ToolTip toolTipSearch;
     }
 }
 

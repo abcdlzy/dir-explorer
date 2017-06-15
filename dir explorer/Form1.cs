@@ -392,20 +392,81 @@ namespace dir_explorer
                             filename=filename.ToLower();
                             
                         }
-                        if (filename.IndexOf(lk) != -1)
+                        if (lk.IndexOf('*') != -1)
                         {
-                            DataRow dr = dt.NewRow();
-                            dr["时间"] = itemObj.getTime();
-                            dr["信息"] = itemObj.getInfo();
-                            dr["名称"] = itemObj.getName();
-                            dr["路径"] = (folderRes.path + "\\" + itemObj.getName()).Replace("\\\\", "\\");
+                            string[] lkArray = lk.Split('*');
+                            string subfilnename = filename;
+                            for(int i = 0; i < lkArray.Length; i++)
+                            {
+                                if (i != lkArray.Length - 1)
+                                {
+                                    if (subfilnename.IndexOf(lkArray[i]) == -1)
+                                    {
+                                        break;
+                                    }
+                                    int startPos = subfilnename.IndexOf(lkArray[i]) + lkArray[i].Length;
+                                    int cutLength = subfilnename.Length - startPos;
+                                    if (subfilnename.Length < startPos)
+                                    {
+                                        break;
+                                    }
+                                    subfilnename = subfilnename.Substring(startPos, cutLength);
+                                    if (subfilnename.Length == 0)
+                                    {
+                                        break;
+                                    }
+                                }
+                                else
+                                {
+                                    if (lkArray[i] == "")
+                                    {
+                                        DataRow dr = dt.NewRow();
+                                        dr["时间"] = itemObj.getTime();
+                                        dr["信息"] = itemObj.getInfo();
+                                        dr["名称"] = itemObj.getName();
+                                        dr["路径"] = (folderRes.path + "\\" + itemObj.getName()).Replace("\\\\", "\\");
+                                        dt.Rows.Add(dr);
+                                    }
+                                    else
+                                    {
+                                        if (subfilnename.IndexOf(lkArray[i]) == -1)
+                                        {
+                                            break;
+                                        }
+                                        int startPos = subfilnename.IndexOf(lkArray[i]) + lkArray[i].Length;
+                                        int cutLength = subfilnename.Length - startPos;
 
-                            dt.Rows.Add(dr);
+                                        if (subfilnename.Length < startPos)
+                                        {
+                                            break;
+                                        }
+                                        subfilnename = subfilnename.Substring(startPos, cutLength);
+                                        if (subfilnename.Length == 0)
+                                        {
+                                            DataRow dr = dt.NewRow();
+                                            dr["时间"] = itemObj.getTime();
+                                            dr["信息"] = itemObj.getInfo();
+                                            dr["名称"] = itemObj.getName();
+                                            dr["路径"] = (folderRes.path + "\\" + itemObj.getName()).Replace("\\\\", "\\");
+                                            dt.Rows.Add(dr);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (filename.IndexOf(lk) != -1)
+                            {
+                                DataRow dr = dt.NewRow();
+                                dr["时间"] = itemObj.getTime();
+                                dr["信息"] = itemObj.getInfo();
+                                dr["名称"] = itemObj.getName();
+                                dr["路径"] = (folderRes.path + "\\" + itemObj.getName()).Replace("\\\\", "\\");
+                                dt.Rows.Add(dr);
+                            }
                         }
                     }
-                    
-
-
                 }
             }
 
@@ -433,6 +494,11 @@ namespace dir_explorer
             {
                 lbSearchTips.Text = ex.Message;
             }
+        }
+
+        private void tbsearch_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTipSearch.Show("使用 * 模糊搜索，使用 | 搜索多个", tbsearch);
         }
     }
 }
