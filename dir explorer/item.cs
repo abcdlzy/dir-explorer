@@ -33,13 +33,26 @@ namespace dir_explorer
             int spaceCheckCount = 0;
             for (int i = 0; i < replace.Length; i++)
             {
-                
-                
-                if (spaceCheckCount < 2)
+                //12小时制
+                bool timeFormat = false;
+                if(replace[2].Equals("AM") || replace[2].Equals("PM"))
+                {
+                    timeFormat = true;
+                }
+
+                if (timeFormat&&spaceCheckCount < 3)
                 {
                     time += replace[i];
                 }
-                else if (spaceCheckCount == 2)
+                else if (timeFormat&&spaceCheckCount == 3)
+                {
+                    info += replace[i];
+                }
+                if (!timeFormat&&spaceCheckCount < 2)
+                {
+                    time += replace[i];
+                }
+                else if (!timeFormat&&spaceCheckCount == 2)
                 {
                     info += replace[i];
                 }
