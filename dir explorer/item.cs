@@ -30,40 +30,37 @@ namespace dir_explorer
             string replace = source.Replace('\t', ' ');
             replace= Regex.Replace(replace, "\\s{2,}", " ");
             replace = replace.Trim();
-            int spaceCheckCount = 0;
-            for (int i = 0; i < replace.Length; i++)
-            {
-                //12小时制
-                bool timeFormat = false;
-                if(replace[2].Equals("AM") || replace[2].Equals("PM"))
-                {
-                    timeFormat = true;
-                }
 
-                if (timeFormat&&spaceCheckCount < 3)
+            string[] rArray = replace.Split(' ');
+
+            //12小时制
+            bool timeFormat = false;
+            if (rArray[2].Equals("AM") || rArray[2].Equals("PM"))
+            {
+                timeFormat = true;
+            }
+
+            for (int i = 0; i < rArray.Length; i++)
+            {
+                if (timeFormat&&i < 3)
                 {
-                    time += replace[i];
+                    time +=(i!=0?" ":"")+ rArray[i];
                 }
-                else if (timeFormat&&spaceCheckCount == 3)
+                else if (timeFormat&&i == 3)
                 {
-                    info += replace[i];
+                    info +=rArray[i];
                 }
-                if (!timeFormat&&spaceCheckCount < 2)
+                else if (!timeFormat&&i < 2)
                 {
-                    time += replace[i];
+                    time += (i != 0 ? " " : "") + rArray[i];
                 }
-                else if (!timeFormat&&spaceCheckCount == 2)
+                else if (!timeFormat&&i == 2)
                 {
-                    info += replace[i];
+                    info +=rArray[i];
                 }
                 else
                 {
-                    name += replace[i];
-                }
-
-                if (replace[i] == ' ')
-                {
-                    spaceCheckCount++;
+                    name +=((timeFormat&&i!=4)||(!timeFormat&&i!=3)?" ":"")+ rArray[i];
                 }
             }
 
