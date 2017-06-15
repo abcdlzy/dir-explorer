@@ -355,16 +355,31 @@ namespace dir_explorer
             {
                 foreach (var itemObj in folderRes.listObj)
                 {
-                    if (itemObj.getName().IndexOf(key) != -1)
+                    List<string> listKey = new List<string>();
+                    if (key.IndexOf('|') != -1)
                     {
-                        DataRow dr = dt.NewRow();
-                        dr["时间"] = itemObj.getTime();
-                        dr["信息"] = itemObj.getInfo();
-                        dr["名称"] = itemObj.getName();
-                        dr["路径"] =( folderRes.path+"\\"+itemObj.getName()).Replace("\\\\","\\");
-                        
-                        dt.Rows.Add(dr);
+                        string[] keys = key.Split('|');
+                        foreach(var k in keys)
+                        {
+                            listKey.Add(k);
+                        }
                     }
+                    foreach(var lk in listKey)
+                    {
+                        if (itemObj.getName().IndexOf(lk) != -1)
+                        {
+                            DataRow dr = dt.NewRow();
+                            dr["时间"] = itemObj.getTime();
+                            dr["信息"] = itemObj.getInfo();
+                            dr["名称"] = itemObj.getName();
+                            dr["路径"] = (folderRes.path + "\\" + itemObj.getName()).Replace("\\\\", "\\");
+
+                            dt.Rows.Add(dr);
+                        }
+                    }
+                    
+
+
                 }
             }
 
