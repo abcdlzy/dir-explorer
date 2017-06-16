@@ -45,28 +45,33 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lbSearchTips = new System.Windows.Forms.Label();
+            this.tbSearchClip = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbcase = new System.Windows.Forms.CheckBox();
             this.btnsearch = new System.Windows.Forms.Button();
             this.tbsearch = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.gvSearch = new System.Windows.Forms.DataGridView();
-            this.cbcase = new System.Windows.Forms.CheckBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tbSearchClip = new System.Windows.Forms.TextBox();
-            this.lbSearchTips = new System.Windows.Forms.Label();
             this.toolTipSearch = new System.Windows.Forms.ToolTip(this.components);
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.gvRs)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnRead
             // 
             this.btnRead.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRead.Location = new System.Drawing.Point(1021, 1);
+            this.btnRead.Location = new System.Drawing.Point(804, 11);
             this.btnRead.Name = "btnRead";
-            this.btnRead.Size = new System.Drawing.Size(75, 23);
+            this.btnRead.Size = new System.Drawing.Size(61, 23);
             this.btnRead.TabIndex = 0;
             this.btnRead.Text = "读取";
             this.btnRead.UseVisualStyleBackColor = true;
@@ -76,26 +81,26 @@
             // 
             this.tbReadFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbReadFile.Location = new System.Drawing.Point(309, 1);
+            this.tbReadFile.Location = new System.Drawing.Point(86, 13);
             this.tbReadFile.Name = "tbReadFile";
-            this.tbReadFile.Size = new System.Drawing.Size(615, 21);
+            this.tbReadFile.Size = new System.Drawing.Size(641, 21);
             this.tbReadFile.TabIndex = 1;
             // 
             // tbPath
             // 
             this.tbPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbPath.Location = new System.Drawing.Point(309, 28);
+            this.tbPath.Location = new System.Drawing.Point(86, 40);
             this.tbPath.Name = "tbPath";
-            this.tbPath.Size = new System.Drawing.Size(690, 21);
+            this.tbPath.Size = new System.Drawing.Size(712, 21);
             this.tbPath.TabIndex = 2;
             // 
             // btnGo
             // 
             this.btnGo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGo.Location = new System.Drawing.Point(1021, 28);
+            this.btnGo.Location = new System.Drawing.Point(804, 40);
             this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(75, 23);
+            this.btnGo.Size = new System.Drawing.Size(61, 23);
             this.btnGo.TabIndex = 3;
             this.btnGo.Text = "go";
             this.btnGo.UseVisualStyleBackColor = true;
@@ -104,7 +109,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(249, 33);
+            this.label1.Location = new System.Drawing.Point(26, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 4;
@@ -113,7 +118,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(232, 6);
+            this.label2.Location = new System.Drawing.Point(9, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 12);
             this.label2.TabIndex = 5;
@@ -121,11 +126,12 @@
             // 
             // tvTree
             // 
-            this.tvTree.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tvTree.Location = new System.Drawing.Point(6, 6);
+            this.tvTree.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tvTree.Location = new System.Drawing.Point(3, 6);
             this.tvTree.Name = "tvTree";
-            this.tvTree.Size = new System.Drawing.Size(208, 505);
+            this.tvTree.Size = new System.Drawing.Size(239, 517);
             this.tvTree.TabIndex = 6;
             this.tvTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvTree_AfterSelect);
             // 
@@ -137,11 +143,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gvRs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvRs.Location = new System.Drawing.Point(234, 83);
+            this.gvRs.Location = new System.Drawing.Point(3, 95);
             this.gvRs.Name = "gvRs";
             this.gvRs.ReadOnly = true;
             this.gvRs.RowTemplate.Height = 23;
-            this.gvRs.Size = new System.Drawing.Size(862, 428);
+            this.gvRs.Size = new System.Drawing.Size(864, 428);
             this.gvRs.TabIndex = 7;
             this.gvRs.DataSourceChanged += new System.EventHandler(this.gvRs_DataSourceChanged);
             this.gvRs.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvRs_CellDoubleClick);
@@ -159,15 +165,15 @@
             "UTF7",
             "UTF32",
             "BigEndianUnicode"});
-            this.cbEncoding.Location = new System.Drawing.Point(930, 1);
+            this.cbEncoding.Location = new System.Drawing.Point(733, 13);
             this.cbEncoding.Name = "cbEncoding";
-            this.cbEncoding.Size = new System.Drawing.Size(71, 20);
+            this.cbEncoding.Size = new System.Drawing.Size(65, 20);
             this.cbEncoding.TabIndex = 8;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(261, 59);
+            this.label3.Location = new System.Drawing.Point(38, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 9;
@@ -177,18 +183,17 @@
             // 
             this.tbclip.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbclip.Location = new System.Drawing.Point(309, 56);
+            this.tbclip.Location = new System.Drawing.Point(86, 68);
             this.tbclip.Name = "tbclip";
-            this.tbclip.Size = new System.Drawing.Size(690, 21);
+            this.tbclip.Size = new System.Drawing.Size(710, 21);
             this.tbclip.TabIndex = 10;
             // 
             // lbClipTips
             // 
-            this.lbClipTips.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbClipTips.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbClipTips.AutoSize = true;
             this.lbClipTips.ForeColor = System.Drawing.Color.Red;
-            this.lbClipTips.Location = new System.Drawing.Point(1019, 59);
+            this.lbClipTips.Location = new System.Drawing.Point(802, 77);
             this.lbClipTips.Name = "lbClipTips";
             this.lbClipTips.Size = new System.Drawing.Size(0, 12);
             this.lbClipTips.TabIndex = 11;
@@ -208,18 +213,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.tvTree);
-            this.tabPage1.Controls.Add(this.lbClipTips);
-            this.tabPage1.Controls.Add(this.btnRead);
-            this.tabPage1.Controls.Add(this.tbclip);
-            this.tabPage1.Controls.Add(this.tbReadFile);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.tbPath);
-            this.tabPage1.Controls.Add(this.cbEncoding);
-            this.tabPage1.Controls.Add(this.btnGo);
-            this.tabPage1.Controls.Add(this.gvRs);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.splitContainer1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -245,6 +239,47 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "搜索";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // lbSearchTips
+            // 
+            this.lbSearchTips.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbSearchTips.AutoSize = true;
+            this.lbSearchTips.ForeColor = System.Drawing.Color.Red;
+            this.lbSearchTips.Location = new System.Drawing.Point(920, 41);
+            this.lbSearchTips.Name = "lbSearchTips";
+            this.lbSearchTips.Size = new System.Drawing.Size(0, 12);
+            this.lbSearchTips.TabIndex = 7;
+            // 
+            // tbSearchClip
+            // 
+            this.tbSearchClip.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSearchClip.Location = new System.Drawing.Point(77, 38);
+            this.tbSearchClip.Name = "tbSearchClip";
+            this.tbSearchClip.Size = new System.Drawing.Size(837, 21);
+            this.tbSearchClip.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(18, 41);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 12);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "当前选择";
+            // 
+            // cbcase
+            // 
+            this.cbcase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbcase.AutoSize = true;
+            this.cbcase.Checked = true;
+            this.cbcase.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbcase.Location = new System.Drawing.Point(936, 13);
+            this.cbcase.Name = "cbcase";
+            this.cbcase.Size = new System.Drawing.Size(84, 16);
+            this.cbcase.TabIndex = 4;
+            this.cbcase.Text = "忽略大小写";
+            this.cbcase.UseVisualStyleBackColor = true;
             // 
             // btnsearch
             // 
@@ -293,46 +328,34 @@
             this.gvSearch.DataSourceChanged += new System.EventHandler(this.gvSearch_DataSourceChanged);
             this.gvSearch.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvSearch_CellDoubleClick);
             // 
-            // cbcase
+            // splitContainer1
             // 
-            this.cbcase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbcase.AutoSize = true;
-            this.cbcase.Checked = true;
-            this.cbcase.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbcase.Location = new System.Drawing.Point(936, 13);
-            this.cbcase.Name = "cbcase";
-            this.cbcase.Size = new System.Drawing.Size(84, 16);
-            this.cbcase.TabIndex = 4;
-            this.cbcase.Text = "忽略大小写";
-            this.cbcase.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 41);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 12);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "当前选择";
-            // 
-            // tbSearchClip
-            // 
-            this.tbSearchClip.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbSearchClip.Location = new System.Drawing.Point(77, 38);
-            this.tbSearchClip.Name = "tbSearchClip";
-            this.tbSearchClip.Size = new System.Drawing.Size(837, 21);
-            this.tbSearchClip.TabIndex = 6;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
             // 
-            // lbSearchTips
+            // splitContainer1.Panel1
             // 
-            this.lbSearchTips.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbSearchTips.AutoSize = true;
-            this.lbSearchTips.ForeColor = System.Drawing.Color.Red;
-            this.lbSearchTips.Location = new System.Drawing.Point(920, 41);
-            this.lbSearchTips.Name = "lbSearchTips";
-            this.lbSearchTips.Size = new System.Drawing.Size(0, 12);
-            this.lbSearchTips.TabIndex = 7;
+            this.splitContainer1.Panel1.Controls.Add(this.tvTree);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.gvRs);
+            this.splitContainer1.Panel2.Controls.Add(this.label1);
+            this.splitContainer1.Panel2.Controls.Add(this.lbClipTips);
+            this.splitContainer1.Panel2.Controls.Add(this.btnGo);
+            this.splitContainer1.Panel2.Controls.Add(this.tbReadFile);
+            this.splitContainer1.Panel2.Controls.Add(this.label2);
+            this.splitContainer1.Panel2.Controls.Add(this.tbclip);
+            this.splitContainer1.Panel2.Controls.Add(this.tbPath);
+            this.splitContainer1.Panel2.Controls.Add(this.cbEncoding);
+            this.splitContainer1.Panel2.Controls.Add(this.btnRead);
+            this.splitContainer1.Panel2.Controls.Add(this.label3);
+            this.splitContainer1.Size = new System.Drawing.Size(1122, 529);
+            this.splitContainer1.SplitterDistance = 245;
+            this.splitContainer1.TabIndex = 12;
             // 
             // Form1
             // 
@@ -345,10 +368,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvRs)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvSearch)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -380,6 +407,7 @@
         private System.Windows.Forms.TextBox tbSearchClip;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolTip toolTipSearch;
+        private System.Windows.Forms.SplitContainer splitContainer1;
     }
 }
 
