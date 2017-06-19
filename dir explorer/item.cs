@@ -35,9 +35,14 @@ namespace dir_explorer
 
             //12小时制
             bool timeFormat = false;
-            if (rArray[2].Equals("AM") || rArray[2].Equals("PM"))
+
+            if (rArray[2].Length==2)
             {
-                timeFormat = true;
+                char[] time = rArray[2].ToCharArray();
+                if(time[0]>='A'&&time[0]<='Z'&& time[1] >= 'A' && time[1] <= 'Z')
+                {
+                    timeFormat = true;
+                }
             }
 
             for (int i = 0; i < rArray.Length; i++)
